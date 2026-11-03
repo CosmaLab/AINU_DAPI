@@ -1,0 +1,17 @@
+# Versions used for the analysis scripts in this repository (macOS, Python 3.x; see README).
+numpy==1.26.4
+pandas==2.3.1
+scipy==1.15.3
+scikit-learn==1.7.1
+scikit-image==0.25.2
+statsmodels==0.14.5
+matplotlib==3.10.3
+seaborn==0.13.2
+openpyxl==3.1.5
+pillow==11.3.0
+opencv-python==4.11.0.86
+albumentations==1.4.20
+torch==2.8.0
+torchvision==0.23.0
+captum==0.8.0
+nbformat==5.10.4
