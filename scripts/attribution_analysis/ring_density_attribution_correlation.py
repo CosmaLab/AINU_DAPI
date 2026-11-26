@@ -16,7 +16,7 @@ being called per-test at an uncorrected alpha=0.05, and no p-value existed to co
 
 Outputs (this dir):
   table_S2_ring_density_correlation.csv   (long format, one row per class x ring)
-  TABLE_S2.md                             (manuscript-ready markdown + caption)
+  TABLE_S2.md
   Table_S2.xlsx                           (formatted Excel, matches Table_S3/S4 style)
   fig_S4B_ring_density_correlation.png/.pdf
 """
