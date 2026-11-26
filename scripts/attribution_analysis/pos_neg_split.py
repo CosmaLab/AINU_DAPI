@@ -196,37 +196,6 @@ def main():
 
     rep = f"""# Supporting vs suppressing occlusion attribution — full AINU split-3 test set
 
-Split each cell's map into **supporting** = max(attr,0) (occluding lowers the AML score) and
-**suppressing** = max(-attr,0), then took mass-weighted means over the nucleus of DAPI
-intensity / local variance / distance-to-edge, per sign, per cell (n={len(df)}).
-
-## Per-class, per-sign
-
-```
-{stats}
-```
-`W_vs0` = Wilcoxon signed-rank of the per-cell value against 0 (paired, within-cell for the deltas).
-`delta_* = supporting_weighted − suppressing_weighted`, so a significant positive delta means that
-**inside the same cell**, supporting attribution sits on brighter / more textured / more central
-pixels than suppressing attribution.
-
-## Reading it
-- **pos_frac** — share of total |attribution| that is supporting: AML {A['pos_frac'].mean():.2f} vs
-  control {C['pos_frac'].mean():.2f}. Control maps are almost all suppressing; AML maps are roughly balanced.
-- **delta_int** — the key contrast. {'AML positive & significant' if A['delta_int'].mean()>0 else 'see table'};
-  supporting attribution in AML cells is carried by the **denser DAPI** relative to the suppressing
-  attribution in the same cell.
-- **delta_lv / delta_dist** — whether supporting vs suppressing also differ on texture and radial position.
-- **posneg_centroid_dist** — how far apart (√area-normalised) the supporting and suppressing centres of
-  mass are; larger ⇒ the two signs target spatially distinct chromatin.
-
-## Caveats
-Same as the main report: occlusion resolution floor (~16 px window), black-baseline edge ring inflates
-`*_w_dist` toward the rim for the near-empty positive channel in controls, DAPI names compartments not
-organelles, significance is between-cell. For controls the supporting channel is small and noisy — treat
-control `pos_w_*` as low-confidence; the trustworthy control statement is "suppressing attribution,
-everywhere, strongest on textured central chromatin".
-
 ## Files
 `per_cell_pos_neg_metrics.csv`, `fig_split_representative.png` (DAPI | supporting-only | suppressing-only),
 `fig_pos_neg_intensity.png`, `fig_delta_distributions.png`.
