@@ -381,34 +381,6 @@ result in Control is not attributable to attribution simply tracking overall bri
 Pairwise (Mann-Whitney):
 {fmt_pairwise("delta_int")}
 
-## Multiple-testing correction (BH-FDR across all 18 pairwise tests)
-The correction family is the full set of pairwise Mann-Whitney tests reported above (3
-metrics x 6 group pairs = 18 tests). Kruskal-Wallis omnibus tests and per-group Wilcoxon-vs-0
-tests are a separate family and are not included in this correction.
-
-{fdr_df.to_string(index=False)}
-
-{int(reject.sum())} of {len(fdr_df)} pairwise tests survive at q<0.05. The only comparison that
-does not survive is MRD vs AML for r_localvar (raw p=0.078) -- already reported as non-significant
-above, so no claim in the text needs to change. Every Control-vs-other-group comparison for
-r_localvar and delta_int survives; r_int_pearson (the brightness control) remains uniformly
-non-significant as intended.
-
-Methods-section language:
-"Given the number of pairwise comparisons performed (18: three metrics x six group pairs),
-Benjamini-Hochberg FDR correction (q < 0.05) was applied across all pairwise Mann-Whitney
-tests. All group differences reported as significant in the text survived correction; only
-the MRD-vs-AML comparison for r_localvar (raw p = 0.078) did not, and is reported as
-non-significant. Kruskal-Wallis omnibus tests and within-group Wilcoxon tests against zero
-were not included in this correction family."
-
-## Authoritative numbers (this run — use these, not any earlier hand-copied values)
-Patients: {', '.join(f'{g}={len(groups[g])}' for g in GROUP_ORDER)} ({len(dropped)} dropped
-for <{MIN_CELLS_PER_PATIENT} cells). All three metrics and the BH-FDR correction above were
-recomputed from the checked-in per-cell CSVs by this script in this run -- any number quoted
-in manuscript text should be copied from this file, not retyped from memory of an earlier
-session.
-
 ## Files
 `patient_level_texture_metrics.csv` (one row per patient, all 4 groups, all 4 metrics),
 `fig_S4C_texture_correlation.png` / `.pdf` (Figure S4C, r_localvar),
