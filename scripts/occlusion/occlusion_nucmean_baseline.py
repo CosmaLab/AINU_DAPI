@@ -1,5 +1,5 @@
 """
-Clean, single-variable baseline ablation: recompute occlusion attribution with a
+Occlusion attribution with a
 per-image nuclear-mean baseline, holding window=8x8/stride=4x4 fixed to match the
 existing gray-baseline (0.5,0.5,0.5) files (`<stem>_positive_occlusion_AML_baseline.npy`)
 for the same 1,662-cell MRD subset -- so the ONLY thing that differs from those files is
