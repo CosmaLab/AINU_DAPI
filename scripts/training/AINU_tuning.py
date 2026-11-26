@@ -32,9 +32,8 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Last modified by Carlotta Viana and Misha 05/2025
-removed the randomization of the dataset. Instead use a split dataset creaded with Split-dataset.py
-also added argument "medmnsit" to use medmnsit pretraned weights
+Last modified by Carlotta Viana and Misha 05/2026
+added argument "medmnsit" to use medmnsit pretraned weights
 
 """
 
