@@ -2,7 +2,7 @@
 
 Part A  test performance of the five retrained AML-vs-Control split models    <- results/4-CT-AML-PB-BM/*_split{1-5}.log
 Part B  per-patient % of cells predicted as AML (mean +- SD over the 5 models) <- results/patient_scoring/patient_pct_aml_new_models.csv
-Output  Paper Tables/Table_S6.xlsx   (a new file; existing tables are not touched)
+Output  Paper Tables/Table_S6.xlsx 
 """
 import os
 import re
