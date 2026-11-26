@@ -321,22 +321,6 @@ value against zero, i.e. "is the effect consistent across cells".)
   AML-*suppressing* mass land on different chromatin compartments (the whole point of
   separating the signs).
 
-## Caveats
-- **Resolution floor.** These maps come from a sliding-window occlusion on a 128 px input.
-  The generating script's window/stride sets the smallest resolvable structure (the repo's
-  Captum_XAI.py uses 16 px window / 8 px stride; confirm for this run). A typical nucleus
-  spans ~90–110 px here, so structures below ~1/8 of the nuclear diameter — including most
-  individual nucleoli — are at or under the floor. Claims should stay at the level of
-  "bright vs dim compartment" and "rim vs core", not named organelles.
-- DAPI marks all DNA; "dense chromatin" and "peripheral heterochromatin" are the defensible
-  descriptions, not immunostain-confirmed identities.
-- Mask is "brightest connected blob". `solidity` and `mask_frac_frame` flag doublets/debris;
-  the representative panel already filters on them, the pooled stats do not — re-run the
-  summary on `solidity > 0.9` if you want the clean-singlet version.
-- Per-cell Pearson/Spearman pool ~thousands of spatially autocorrelated pixels, so the
-  per-cell p-values would be anticonservative — that's why significance here is taken at the
-  **between-cell** level (MWU / Wilcoxon over cells), not per pixel.
-
 ## Files
 - `per_cell_attribution_metrics.csv` — one row per cell, all metrics + prediction_score/correct/source
 - `summary_by_class.csv`
