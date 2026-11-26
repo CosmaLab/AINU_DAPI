@@ -4,8 +4,8 @@ Rebuilds `df` with the data-preparation cells of occlusion_feature_analysis_AML_
 checks that the ring means reproduce the saved 02a_ring_profiles_all_classes_{0,1,2}.csv, then repeats the notebook's test:
   AML vs Control, two-sided Mann-Whitney U on patient-level medians, Benjamini-Hochberg across the 8 rings within each panel.
 
-Output  Paper Tables/Table_S1_partA_ring_stats.csv  (Part A rows)
-        Paper Tables/Table_S1_combined.xlsx         (Part A + existing Table_S1.xlsx as Part B; new file, nothing is overwritten)
+Output  Paper Tables/Table_S1_partA_ring_stats.csv 
+        Paper Tables/Table_S1_combined.xlsx         
 """
 import os, json, warnings
 warnings.filterwarnings("ignore")
