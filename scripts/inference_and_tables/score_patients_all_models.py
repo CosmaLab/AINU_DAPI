@@ -1,8 +1,4 @@
-"""Per-patient % of cells predicted as AML with the 5 retrained split models (4-CT-AML-PB-BM, without AML12/AML14).
-
-Recalculates Fig 2A (preleukemia patients) and Fig 3A (MRD cohort):
-  for each patient and each split model: fraction of the patient's cells with P(AML) > 0.5
-  -> dot = mean over the 5 split models, error bar = SD over the 5 split models.
+"""Per-patient % of cells predicted as AML with the 5 retrained split models.
 
 Outputs (results/patient_scoring/):
   per_cell_prob_aml_new_models.csv   P(AML) of every cell under each split model
