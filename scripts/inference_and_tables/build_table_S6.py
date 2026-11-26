@@ -97,8 +97,6 @@ for r in rows_a: add(r, fmtA)
 num = A[["Accuracy", "Weighted F1", "ROC AUC", "Control recall", "AML recall"]]
 add(["Mean", None, None, None] + list(num.mean()) + [None, None], fmtA, fill=sub_fill, bold_=True)
 add(["s.d.", None, None, None] + list(num.std(ddof=1)) + [None, None], fmtA, fill=sub_fill, bold_=True)
-add(["Original models (Table 2, Model n1), as reported in the manuscript text", None, None, None, 0.89, 0.89, 0.96, None, None, None, None], fmtA)
-add(["  s.d. as reported", None, None, None, 0.005, 0.005, 0.004, None, None, None, None], fmtA)
 ws.append([])
 merged_text("B. Per-patient percentage of cells predicted as AML (retrained models)", True)
 header(B_cols)
